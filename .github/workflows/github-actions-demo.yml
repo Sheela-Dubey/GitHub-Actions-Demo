@@ -1,10 +1,10 @@
 name: GitHub Actions Demo
 
-on: [push]  # Trigger on every push to any branch
+on: [push]
 
 jobs:
   test-job:
-    runs-on: ubuntu-latest  # Use Linux environment
+    runs-on: windows-latest
     steps:
       - name: Print a message
         run: echo "Workflow triggered by a push event."
@@ -15,4 +15,4 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: List project files
-        run: ls "${{ github.workspace }}"
+        run: dir "${{ github.workspace }}"
