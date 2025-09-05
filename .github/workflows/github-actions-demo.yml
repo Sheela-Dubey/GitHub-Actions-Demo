@@ -8,15 +8,11 @@ jobs:
     steps:
       - name: Print a message
         run: echo "Workflow triggered by a push event."
-
-      - name: Print OS info
-        run: echo "Running on: ${{ runner.os }}"
-
+      - name: Print OS
+        run: echo "Running on a server with OS: ${{ runner.os }}"
       - name: Print branch name
         run: echo "Branch: ${{ github.ref }}"
-
       - name: Checkout code
         uses: actions/checkout@v4
-
       - name: List project files
-        run: ls ${{ github.workspace }}
+        run: ls "${{ github.workspace }}"
